@@ -23,4 +23,25 @@ class ScriptsTest extends \WP_UnitTestCase
             $this->assertFalse($src);
         }
     }
+
+    public function testOutput()
+    {
+        $handle = 'testScript';
+        $src = home_url('testSrc.js');
+
+        // Enqueue fake script (like a plugin would)
+        wp_enqueue_script($handle, $src);
+
+        // Set this script as bundled
+        $scripts = new Scripts();
+        $scripts->init();
+        $scripts->add($handle);
+
+        // Test output
+        ob_start();
+        wp_print_scripts();
+        $output = ob_get_clean();
+
+        $this->assertNotContains($src, $output);
+    }
 }
