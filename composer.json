@@ -1,0 +1,20 @@
+{
+  "name": "trendwerk/skip-bundled",
+  "description": "Skip scripts bundled in your WordPress theme.",
+  "license": "GPL-3.0+",
+  "authors": [
+    {
+      "name": "Harold Angenent",
+      "email": "harold@trendwerk.nl",
+      "homepage": "https://github.com/haroldangenent"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Trendwerk\\SkipBundled\\": "src/"
+    }
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "2.*"
+  }
+}
