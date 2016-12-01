@@ -12,6 +12,7 @@ require_once $testsDir . '/includes/functions.php';
  * Manually load the plugin being tested.
  */
 tests_add_filter('muplugins_loaded', function () {
+    require_once __DIR__ . '/../vendor/autoload.php';
 });
 
 // Start up the WP testing environment.
